@@ -1,5 +1,6 @@
 package com.dev.service_booking.entities;
 
+import com.dev.service_booking.dtos.UserDTO;
 import com.dev.service_booking.enums.UserRole;
 
 import jakarta.persistence.Entity;
@@ -23,5 +24,18 @@ public class User {
     private String lastname;
     private String phone;
     private UserRole role;
+
+    
+
+    public UserDTO getDTO(){
+        UserDTO userDTO = new UserDTO();
+
+        userDTO.setId(id);
+        userDTO.setName(name);
+        userDTO.setEmail(email);
+        userDTO.setRole(role);
+
+        return userDTO;
+    }
 
 }
